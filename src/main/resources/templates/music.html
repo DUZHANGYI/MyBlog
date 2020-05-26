@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线音乐</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/music.css">
+</head>
+<body>
+<div id="music">
+    <!--  头部  -->
+    <nav class="ui grid m-padding-sm m-margin-big">
+        <div class="four column row">
+            <div class="left floated column">
+                <span class="ui header ">
+                    <i class="iconfont">&#xe730;</i>&nbsp;&nbsp;
+                    <span>AaronMusic</span>
+                 </span>
+            </div>
+            <div class="right floated column">
+                <div class="ui search">
+                    <div class="ui icon input">
+                        <input class="prompt" type="text" placeholder="search..." v-model="query" @keyup.enter="searchMusic">
+                        <i class="search icon"></i>
+                    </div>
+                    <div class="results"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--  主体  -->
+    <main class="ui content">
+        <div class="ui grid m-margin-left">
+            <!--左侧音乐列表-->
+            <div class="eleven wide column">
+                <div class="ui segment content ">
+                    <div class="m-song-list-lyrics" style="height: 700px">
+                        <!--表头-->
+                        <div class="ui grid">
+                            <div class="three wide column">
+                                <h3>歌曲</h3>
+                            </div>
+                            <div class="three wide column">
+                                <h3></h3>
+                            </div>
+                            <div class="three wide column">
+                                <h3>歌手</h3>
+                            </div>
+                            <div class="three wide column">
+                                <h3>专辑</h3>
+                            </div>
+                            <div class="three wide column">
+                                <h3>时长</h3>
+                            </div>
+                        </div>
+                        <!--歌曲信息-->
+                        <div class="ui grid m-hover" v-for="item in musicList">
+                            <div class="three wide column">
+                                <h5 class="m-font">{{item.name}}</h5>
+                            </div>
+                            <div class="three wide column">
+                                <a href="javascript:;" @click="playMusic(item.id)" class="play"><i class="iconfont m-iconfont">&#xe77c;</i></a>
+                            </div>
+                            <div class="three wide column">
+                                <h4 class="m-font">{{item.artists[0].name}}</h4>
+                            </div>
+                            <div class="three wide column">
+                                <h4 class="m-font">{{item.album.name}}</h4>
+                            </div>
+                            <div class="three wide column">
+                                <h4 class="m-font">04:13</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右侧歌词-->
+            <div class="four wide column m-margin-left">
+                <div class="ui segment content">
+                    <img class="ui small centered circular image musicPic"
+                         :src="musicPic">
+                </div>
+                <div class="ui grid segment content">
+                    <div class="center aligned two column row m-padded-lr m-song-list-lyrics m-height">
+                        <span v-for="lrc in musicLyric">
+                            <span v-text="lrc.substring(11,)"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--  底部播放控件  -->
+    <footer>
+        <audio ref="audio" :src="musicSrc" controls autoplay></audio>
+    </footer>
+</div>
+<!--  JS  -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../static/js/music.js"></script>
+</body>
+</html>

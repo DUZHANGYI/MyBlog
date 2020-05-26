@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+<body>
+<!--  头部  -->
+<nav th:replace="_fragments :: menu(6)" class="ui attached segment m-padding-sm m-background container ">
+    <div id="logo">
+        <span class="ui header inverted">
+            <i class="iconfont">&#xe730;</i>&nbsp;&nbsp;
+            <span class="m-mobile-hide" style="color: #060606">AaronBlog</span>
+        </span>
+    </div>
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <a href="index.html" class="m-hover item"><i class="iconfont">&#xe600;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">主页</span></a>
+            <a href="files.html" class="item m-hover"><i class="iconfont">&#xe60c;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">归档</span></a>
+            <a href="type.html" class="item m-hover"><i class="iconfont">&#xe623;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">分类</span></a>
+            <a href="tag.html" class="item m-hover"><i class="iconfont">&#xe60e;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">标签</span></a>
+            <a href="message.html" class="item m-hover"><i class="iconfont">&#xe6ae;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">留言</span></a>
+            <a href="about.html" class="item m-hover"><i class="iconfont">&#xe62f;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">关于我</span></a>
+            <a href="./admin/login.html" target="_blank" class="item m-hover m-mobile-hide"><i
+                    class="iconfont">&#xe646;</i>&nbsp;&nbsp;<span class=" m-color-black">后台管理</span></a>
+            <a href="music.html" target="_blank" class="item m-hover m-mobile-hide"><i class="iconfont">&#xe601;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">在线音乐</span></a>
+            <div class="right item m-mobile-hide">
+                <div class="ui small icon input">
+                    <input type="text" class="m-border-radius" placeholder="Search ...">
+                    <i class="search icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--  主体  -->
+<main id="waypoint" class="m-padded-tb-large">
+    <div class="ui segment container">
+        <!--图片区-->
+        <div class="ui three column grid">
+            <!--左侧图片-->
+            <div class="ui wide left floated column  images m-images-big  animated wobble">
+                <img class="ui image" src="../static/images/cat/1585398016072.jpeg">
+            </div>
+            <!--中间头像-->
+            <div class="ui images m-images-big animated slideInDown">
+                <img class="ui circular image" src="../static/images/1582110566994.jpeg">
+            </div>
+            <!--右侧图片-->
+            <div class="ui wide column right floated  images m-images-big animated slideInRight">
+                <img class="ui image" src="../static/images/cat/1585206282841.jpeg">
+            </div>
+        </div>
+        <!--主体-->
+        <div class="five wide column">
+            <!--个人简介-->
+            <div class="ui center aligned container animated bounceInLeft">
+                <div class="ui segments">
+                    <div class="ui segment m-background-image">
+                        <h3>个人简介</h3>
+                    </div>
+                    <div class="ui horizontal segments">
+                        <div class="ui segment">
+                            <h4>Aaron_Du</h4>
+                        </div>
+                        <div class="ui segment">
+                            <h4>男</h4>
+                        </div>
+                        <div class="ui segment">
+                            <h4>一名从事JAVA后端开发的小白</h4>
+                        </div>
+                    </div>
+                    <div class="ui segment">
+                        <h3>个人爱好</h3>
+                    </div>
+                    <div class="ui segments">
+                        <div class="ui segment">
+                            <h4>听歌</h4>
+                        </div>
+                        <div class="ui segment">
+                            <h4>看电影</h4>
+                        </div>
+                        <div class="ui segment">
+                            <h4>写代码</h4>
+                        </div>
+                    </div>
+                    <div class="ui segment">
+                        <h4>联系方式：d_aaron@163.com</h4>
+                    </div>
+                </div>
+            </div>
+            <!--关于本站-->
+            <div class="ui center aligned container m-margin-top animated jackInTheBox">
+                <div class="ui segments">
+                    <div class="ui segment m-background-image">
+                        <h3>关于本站</h3>
+                    </div>
+                    <div class="ui segment">
+                        <p class="m-text-height">
+                            写这个网站纯属是看着别人的博客项目写的不错，自己又刚学完SpringBoot就想着把所学的知识融合一下，于是在2020-04-06完成初代版本
+                            <p>本站后台采用SpringBoot+SpringDataJpa+Thymeleaf模板搭建</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--友情链接-->
+            <div class="ui center aligned container m-margin-top animated flipInX">
+                <div class="ui segments">
+                    <div class="ui segment m-background-image">
+                        <h3>友情链接</h3>
+                    </div>
+                    <div class="ui segment">
+                        <div class="ui grid">
+                            <div class="four wide column">
+                                <div class="ui container">
+                                    <img class="ui middle circular aligned mini image"
+                                         src="../static/images/cat/1585398010228.jpeg">
+                                    <span class="ui center aligned label"><a href="#">xxx博客</a></span>
+                                </div>
+                            </div>
+                            <div class="four wide column">
+                                <div class="ui container">
+                                    <img class="ui middle circular aligned mini image"
+                                         src="../static/images/cat/1585213362490.jpeg">
+                                    <span class="ui center aligned label"><a href="#">xxx博客</a></span>
+                                </div>
+                            </div>
+                            <div class="four wide column">
+                                <div class="ui container">
+                                    <img class="ui middle circular aligned mini image"
+                                         src="../static/images/cat/1585206282841.jpeg">
+                                    <span class="ui center aligned label"><a href="#">xxx博客</a></span>
+                                </div>
+                            </div>
+                            <div class="four wide column">
+                                <div class="ui container">
+                                    <img class="ui middle circular aligned mini image"
+                                         src="../static/images/cat/1585213296204.jpeg">
+                                    <span class="ui center aligned label"><a href="#">xxx博客</a></span>
+                                </div>
+                            </div>
+                            <div class="four wide column">
+                                <div class="ui container">
+                                    <img class="ui middle circular aligned mini image"
+                                         src="../static/images/cat/1585213302463.jpeg">
+                                    <span class="ui center aligned label"><a href="#">xxx博客</a></span>
+                                </div>
+                            </div>
+                            <div class="four wide column">
+                                <div class="ui container">
+                                    <img class="ui middle circular aligned mini image"
+                                         src="../static/images/cat/1585213311656.jpeg">
+                                    <span class="ui center aligned label"><a href="#">xxx博客</a></span>
+                                </div>
+                            </div>
+                            <div class="four wide column">
+                                <div class="ui container">
+                                    <img class="ui middle circular aligned mini image"
+                                         src="../static/images/cat/1585213319347.jpeg">
+                                    <span class="ui center aligned label"><a href="#">xxx博客</a></span>
+                                </div>
+                            </div>
+                            <div class="four wide column">
+                                <div class="ui container">
+                                    <img class="ui middle circular aligned mini image"
+                                         src="../static/images/cat/1585213347258.jpeg">
+                                    <span class="ui center aligned label"><a href="#">xxx博客</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  返回顶部  -->
+    <div id="toolbar" class="m-margin-bottom m-mobile-hide ">
+        <div class="ui vertical icon buttons ">
+            <button type="button" class="ui icon button" id="toTop"><i class="chevron up icon"></i></button>
+        </div>
+    </div>
+</main>
+<!--  底部  -->
+<footer th:replace="_fragments :: footer" class="ui attached segment container">
+    <h5 class="ui  center aligned header">Copyright&copy;2020 Aaron 版权所有</h5>
+</footer>
+<!--  JS  -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+<script src="../static/js/public.js"></script>
+</body>
+</html>

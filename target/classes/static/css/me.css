@@ -1,0 +1,204 @@
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+    background: url(https://pic.downk.cc/item/5e802961504f4bcb04053b87.png) 0 / cover fixed !important;
+}
+main{
+    width: 100%;
+    line-height: 2;
+    background: rgba(255, 255, 255, .8);
+    box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, .3);
+    overflow: hidden;
+}
+main::before{
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    filter: blur(20px);
+    z-index: -1;
+    margin: -30px;
+}
+::-webkit-scrollbar {
+    width:10px;
+    height:10px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, .3);
+    overflow: hidden;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #a3a3a3;
+    background-clip:padding-box;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius:2em;
+}
+@font-face {
+    font-family: 'iconfont';  /* project id 1710367 */
+    src: url('//at.alicdn.com/t/font_1710367_rytxuzgkef.eot');
+    src: url('//at.alicdn.com/t/font_1710367_rytxuzgkef.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1710367_rytxuzgkef.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1710367_rytxuzgkef.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1710367_rytxuzgkef.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1710367_rytxuzgkef.svg#iconfont') format('svg');
+}
+.m-iconfont{
+    font-family:"iconfont" !important;
+    color: #060606;
+    font-size:30px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    color: #060606;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+#logo{
+    position: absolute;
+    margin-top: 15px;
+}
+/*-----------------------始应手机端----------------------------*/
+@media screen and (max-width: 1024px){
+    .m-mobile-hide {
+        display: none !important;
+    }
+    .m-mobile-show {
+        display: block !important;
+    }
+    .m-mobile-wide {
+        width: 100% !important;
+    }
+    #blog_text{
+        width: 95% !important;
+        margin-left: 10px !important;
+    }
+    .m-padded-lr-big {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .m-margin-huge{
+        margin-bottom: 0!important;
+    }
+}
+
+/*----------------------自定义-----------------------*/
+.m-mobile-show {
+    display: none !important;
+}
+.m-padding-sm{
+    padding-top: 0.2em !important;
+    padding-bottom: 0.21em !important;
+}
+.m-padded-tb-large {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+.m-padded-lr-big {
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+.m-margin{
+    margin-top: 2.5em !important;
+}
+.m-margin-all{
+    margin: 1em 1em !important;
+}
+.m-margin-top{
+    margin-top: 4em !important;
+}
+.m-margin-bottom{
+    position: fixed !important;
+    bottom: 0.5em !important;
+    right: 2em !important;
+    z-index: 10 !important;
+}
+.m-margin-left{
+    margin-left: 70px !important;
+}
+.m-margin-right{
+    margin-right: 22px !important;
+}
+.m-width-sm{
+    width: 130px !important;
+}
+.m-width-big{
+    width: 300px!important;
+}
+.m-font-family{
+    font-family: 'Cambria Math'!important;
+}
+.m-text-thin {
+    font-weight: 300 !important;
+}
+.m-text-thin-small {
+    font-size: 12px !important;
+}
+.m-text-height{
+    line-height: 2em !important;
+}
+.m-inline-block {
+    display: inline-block !important;
+}
+.m-background{
+    background-color: #ffffff !important;
+}
+.m-color-black{
+    color: #000000
+}
+.m-color-white{
+    color: #060606 !important;
+    font-size: 14px !important;
+}
+.m-images-big{
+    width: 220px!important;
+    height: 220px !important;
+}
+.m-margin-huge{
+    margin-bottom: 31em!important;
+}
+.m-hover{
+    background-color: #ececec !important;
+}
+.m-hover:hover{
+    background-color: #ececec !important;
+}
+.m-border-radius{
+    border-radius: 30px!important;
+}
+.m-height-big{
+    height: 54em!important;
+}
+.m-body{
+    overflow: hidden !important;
+}
+.m-padded-tb-massive {
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+}
+.m-container-small {
+    max-width: 60em !important;
+    margin: auto !important;
+}
+/*----------------------配色-----------------------*/
+.m-background-color{
+    line-height: 2!important;
+    margin: auto!important;
+    border-radius: 5px!important;
+    background: rgba(255, 255, 255, .3)!important;
+    box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, .3)!important;
+    overflow: hidden!important;
+}
+.m-background-image{
+   background-color: #dfe6e9!important;
+}
+.m-background-pink{
+    background-color: #e8aeb5 !important;
+    color: white !important;
+}
+
+

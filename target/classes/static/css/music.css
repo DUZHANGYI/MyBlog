@@ -1,0 +1,114 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/*----------------------  美化滚动条  ----------------------*/
+::-webkit-scrollbar {
+    width: 2px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c7c7c7;
+    background-clip: padding-box;
+    min-height: 28px;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+
+/*----------------------  AliBaBaIcon  ----------------------*/
+@font-face {
+    font-family: 'iconfont';  /* project id 1710367 */
+    src: url('//at.alicdn.com/t/font_1710367_nxfgwpipgze.eot');
+    src: url('//at.alicdn.com/t/font_1710367_nxfgwpipgze.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1710367_nxfgwpipgze.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1710367_nxfgwpipgze.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1710367_nxfgwpipgze.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1710367_nxfgwpipgze.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    color: #060606;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*----------------------  自定义样式  ----------------------*/
+.m-padding-sm {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    margin-left: 30px !important;
+}
+
+.m-padded-lr {
+    line-height: 30px;
+    padding-left: 4em !important;
+    padding-right: 1em !important;
+}
+
+.m-margin-left {
+    margin-left: 30px !important;
+}
+.m-height{
+    height: 530px !important;
+}
+.m-song-list-lyrics{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: center;
+}
+.m-song-list-lyrics::-webkit-scrollbar {
+    display: none;
+}
+.m-font{
+    font-size: 12px;
+    color: white;
+    font-family: Cambria;
+    font-weight: 300;
+}
+.m-iconfont{
+    font-size: 20px;
+    color: white;
+}
+
+/*----------------------  背景虚化  ----------------------*/
+.content {
+    word-break: break-all;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.content:before {
+    content: '';
+    background: url("https://y.gtimg.cn/music/photo_new/T002R300x300M000004EI1uf2PQtJJ_2.jpg?max_age=2592000") center center / cover no-repeat fixed;
+    filter: blur(150px);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+/*----------------------  鼠标悬浮  ----------------------*/
+.m-hover:hover{
+    background-color: #ececec;
+    color: black;
+}
+.musicPic{
+    animation: rot 5s linear infinite !important;
+    -webkit-animation: rot 50s linear infinite !important;
+}
+@keyframes rot {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(3360deg);
+    }
+}

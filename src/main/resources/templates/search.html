@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索结果</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+<body>
+<!--  头部  -->
+<nav th:replace="_fragments :: menu(0)" class="ui attached segment m-padding-sm m-background container ">
+    <div id="logo">
+        <span class="ui header inverted">
+            <i class="iconfont">&#xe730;</i>&nbsp;&nbsp;
+            <span class="m-mobile-hide" style="color: #060606">AaronBlog</span>
+        </span>
+    </div>
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <a href="index.html" class="m-hover item"><i class="iconfont">&#xe600;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">主页</span></a>
+            <a href="files.html" class="item m-hover"><i class="iconfont">&#xe60c;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">归档</span></a>
+            <a href="type.html" class="item m-hover"><i class="iconfont">&#xe623;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">分类</span></a>
+            <a href="tag.html" class="item m-hover"><i class="iconfont">&#xe60e;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">标签</span></a>
+            <a href="message.html" class="item m-hover"><i class="iconfont">&#xe6ae;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">留言</span></a>
+            <a href="about.html" class="item m-hover"><i class="iconfont">&#xe62f;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">关于我</span></a>
+            <a href="./admin/login.html" target="_blank" class="item m-hover m-mobile-hide"><i
+                    class="iconfont">&#xe646;</i>&nbsp;&nbsp;<span class=" m-color-black">后台管理</span></a>
+            <a href="music.html" target="_blank" class="item m-hover m-mobile-hide"><i class="iconfont">&#xe601;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">在线音乐</span></a>
+            <div class="right item m-mobile-hide">
+                <div class="ui small icon input">
+                    <input type="text" class="m-border-radius" placeholder="Search ...">
+                    <i class="search icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--  中间内容  -->
+<main id="waypoint">
+    <div class="m-container-small m-padded-tb-big m-padded-tb-large">
+        <div class="ui container">
+            <div class="eleven wide column">
+                <div class="ui top attached segment">
+                    <div class="ui middle aligned two column grid">
+                        <div class="column">
+                            <h3 class="ui header">搜索结果</h3>
+                        </div>
+                        <div class="right aligned column">
+                            共 <h2 class="ui orange header m-inline-block m-text-thin"
+                                  th:text="${page.totalElements}"> 14 </h2> 篇
+                        </div>
+                    </div>
+                    <!--中间内容-->
+                    <div class="ui segment" th:each="blog : ${page.content}">
+                        <!--顶部标题-->
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank"
+                                                         class="m-color-black" th:text="${blog.title}">SpringBoot集成swagger2</a>
+                                </h3>
+                            </div>
+                            <div class=" aligned column">
+                                <div class="ui right ribbon orange horizontal label">
+                                    <span class="m-text-thin">原 创</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--正文-->
+                        <div class="ui middle aligned two column grid">
+                            <p class="m-text" th:text="|${blog.description}......|">正确做好任何一件事情的前提是清晰、
+                                正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，
+                                甚至根本从来就没有想过，只是大家都那么做而已…...
+                            </p>
+                        </div>
+                        <!--底部样式-->
+                        <div class="ui middle aligned two column grid">
+                            <div class="ui aligned grid">
+                                <div class="wide column">
+                                    <div class="ui mini  horizontal list">
+                                        <div class="item">
+                                            <img src="../static/images/1582110611334.jpeg" class="ui avatar image">
+                                            <div class="content"><a href="#" class="header"
+                                                                    th:text="${blog.user.nickname}"></a></div>
+                                        </div>
+                                        <div class="item">
+                                            <p><i class="calendar icon"></i><span
+                                                    th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}"></span></p>
+                                        </div>
+                                        <div class="item">
+                                            <p><i class="eye icon"></i><span th:text="${blog.views}"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right aligned  column">
+                                <a href="#" target="_blank" class="ui pointing purple basic label"
+                                   th:text="${blog.type.name}">SpringBoot</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--底部翻页-->
+                <div class="ui attached bottom segment">
+                    <div class="ui middle aligned two column grid">
+                        <div class="column">
+                            <a href="#" th:href="@{/(page=${page.number}-1)}" th:unless="${page.first}"
+                               class="ui orange basic button">上一页</a>
+                        </div>
+                        <div class="ui right aligned column">
+                            <a href="#" th:href="@{/(page=${page.number}+1)}" th:unless="${page.last}"
+                               class="ui orange basic button">下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--  底部  -->
+<footer th:replace="_fragments :: footer" class="ui attached segment container">
+    <h5 class="ui  center aligned header">Copyright&copy;2020 Aaron 版权所有</h5>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+</body>
+</html>

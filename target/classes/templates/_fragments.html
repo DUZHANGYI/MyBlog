@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">博客详情</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/static/css/typo.css}">
+    <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/static/css/animate.css}">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/static/lib/prism/prism.css}">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/static/lib/tocbot/tocbot.css}">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/static/css/me.css}">
+</head>
+<body>
+<!--  头部  -->
+<nav th:fragment="menu(n)" class="ui attached segment m-padding-sm m-background container">
+    <div id="logo">
+        <span class="ui header inverted">
+            <i class="iconfont">&#xe730;</i>&nbsp;&nbsp;
+            <span class="m-mobile-hide" style="color: #060606">AaronBlog</span>
+        </span>
+    </div>
+    <!--导航栏-->
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <a href="index.html" th:href="@{/}" class=" item" th:classappend="${n==1} ?'m-hover'"><i class="iconfont">&#xe600;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">主页</span></a>
+            <a href="files.html" th:href="@{/archives}" class="item" th:classappend="${n==2} ?'m-hover'"><i
+                    class="iconfont">&#xe60c;</i>&nbsp;&nbsp;<span class=" m-color-black">归档</span></a>
+            <a href="type.html" th:href="@{/types/-1}" class="item" th:classappend="${n==3} ?'m-hover'"><i
+                    class="iconfont">&#xe623;</i>&nbsp;&nbsp;<span class=" m-color-black">分类</span></a>
+            <a href="tag.html" th:href="@{/tags/-1}" class="item" th:classappend="${n==4} ?'m-hover'"><i
+                    class="iconfont">&#xe60e;</i>&nbsp;&nbsp;<span class=" m-color-black">标签</span></a>
+            <a href="message.html" th:href="@{/message/}" class="item" th:classappend="${n==5} ?'m-hover'"><i
+                    class="iconfont">&#xe6ae;</i>&nbsp;&nbsp;<span class=" m-color-black">留言</span></a>
+            <a href="about.html" th:href="@{/about/}" class="item" th:classappend="${n==6} ?'m-hover'"><i
+                    class="iconfont">&#xe62f;</i>&nbsp;&nbsp;<span class=" m-color-black">关于我</span></a>
+            <a href="./admin/login.html" th:href="@{/admin}" target="_blank" class="item m-mobile-hide"><i
+                    class="iconfont">&#xe646;</i>&nbsp;&nbsp;<span class=" m-color-black">后台管理</span></a>
+            <a href="music.html" target="_blank" class="item m-mobile-hide"><i class="iconfont">&#xe601;</i>&nbsp;&nbsp;<span
+                    class=" m-color-black">在线音乐</span></a>
+            <div class="right item m-mobile-hide">
+                <form class="ui small" name="search" action="#" th:action="@{/search}" method="post" target="_blank">
+                    <div class="ui small  icon input">
+                        <input type="text" name="query" class="m-border-radius" placeholder="Search ..."
+                               th:value="${query}">
+                        <i onclick="document.forms['search'].submit()" class="search link icon"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--  底部  -->
+<footer th:fragment="footer" class="ui attached segment container">
+    <h5 class="ui  center aligned header">Copyright&copy;2020 Aaron 版权所有</h5>
+</footer>
+<!--  JS  -->
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script src="../static/lib/prism/prism.js" th:href="@{/static/lib/prism/prism.js}"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js" th:href="@{/static/lib/tocbot/tocbot.min.js}"></script>
+    <script src="../static/lib/qrcode/qrcode.min.js" th:href="@{/static/lib/qrcode/qrcode.min.js}"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js"
+            th:href="@{/static/lib/waypoints/jquery.waypoints.min.js}"></script>
+    <script src="../static/js/blog.js" th:href="@{/static/js/blog.js}"></script>
+    <script src="../static/js/public.js" th:href="@{/static/js/public.js}"></script>
+</th:block>
+</body>
+</html>
